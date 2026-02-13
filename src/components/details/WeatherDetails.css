@@ -1,76 +1,34 @@
 .WeatherDetails {
-  width: 1140;
-  height: 554;
+  width: 1140px;
+  margin: 0 auto;
+  padding: 40px;
   opacity: 1;
-  top: 1245px;
-  left: 150px;
   border-radius: 20px;
   background: #e8e8e8;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   margin-top: 200px;
   margin-bottom: 200px;
+  column-gap: 58px;
+  row-gap: 40px;
+  
 }
-.WeatherDetails-temp {
+.second{
+  margin-bottom: 20px;
+}
+.WeatherDetails-minmax-top,.WeatherDetails-minmax-lowmid{
+  margin-bottom: 10px;
+}
+.weather-container {
   display: flex;
   justify-content: center;
-  width: 290;
-  height: 217;
-  opacity: 1;
-  border-radius: 10px;
-}
-.WeatherDetails-minmax {
-  display: flex;
-  width: 290;
-  height: 217;
-  opacity: 1;
-  border-radius: 10px;
-}
-.WeatherDetails-temp {
-  display: flex;
-  justify-content: center;
-  width: 290;
-  height: 217;
-  opacity: 1;
-  border-radius: 10px;
-}
-.WeatherDetails-minmax {
-  display: flex;
-  justify-content: center;
-  width: 290;
-  height: 217;
-  opacity: 1;
-  border-radius: 10px;
-}
-.WeatherDetails-humidity {
-  display: flex;
-  justify-content: center;
-  width: 290;
-  height: 217;
-  opacity: 1;
-  border-radius: 10px;
-}
-.WeatherDetails-pressure {
-  display: flex;
-  justify-content: center;
-  width: 290;
-  height: 217;
-  opacity: 1;
-  border-radius: 10px;
-}
-.WeatherDetails-windspeed {
-  display: flex;
-  justify-content: center;
-  width: 290;
-  height: 217;
-  opacity: 1;
-  border-radius: 10px;
-}
-.WeatherDetails-visibility {
-  display: flex;
-  justify-content: center;
-  width: 290;
-  height: 217;
+  flex-direction: column;
+  width: 290px;
+  align-items: center;
+  height: 217px;
+  background: #d9d9d9;
   opacity: 1;
   border-radius: 10px;
 }
