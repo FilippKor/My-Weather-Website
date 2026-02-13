@@ -34,6 +34,9 @@
 .cards-forcast {
   margin-top: 10px;
   margin-bottom: 30px;
+  display: flex;
+  column-gap: 25px;
+  align-items: center;
 }
 .cards-fact {
   display: flex;
@@ -48,6 +51,10 @@
   font-size: 32px;
   line-height: 100%;
   letter-spacing: 0%;
+}
+.cards-fact-line{
+  margin-left: 13px;
+  margin-right: 13px;
 }
 .cards-forcast-hourly {
   background: #ffb36c;
