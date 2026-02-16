@@ -6,6 +6,7 @@ import Nav from './components/nav/Nav';
 import Header from './components/header/Header';
 import Cards from './components/cards/Cards';
 import WeatherDetails from './components/details/WeatherDetails';
+import Future from './components/future/Future';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
     <Header/>
     <Cards/>
     <WeatherDetails/>
+    <Future/>
   </React.StrictMode>
 );
 
