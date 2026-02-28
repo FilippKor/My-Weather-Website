@@ -1,0 +1,30 @@
+.pets {
+    margin: 80px 150px;
+}
+
+.pets-title {
+    margin-bottom: 40px;
+}
+
+.pets-box {
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 40px;
+}
+
+.pets-news-picutre {
+    width: 270px;
+    height: 280px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.pets-more {
+    padding: 10px 30px;
+    border-radius: 10px;
+    background: #ffb36c;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    color: #000;
+}
