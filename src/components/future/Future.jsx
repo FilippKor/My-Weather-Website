@@ -6,49 +6,31 @@ import sunish from '../../accets/future/sun-cloudy.png'
 import sunny from '../../accets/future/sunny.png'
 import verysunnyish from '../../accets/future/verysuncloudy.png'
 function Future() {
-    return(
+    const [dateDatas, setDateDatas] = useState([
+        { title: 'Fri, Oct 13', icon: sunish, temperature: '23/14℃', explained: 'Light rain' },
+        { title: 'Sat, Oct 14', icon: sunish, temperature: '22/10℃', explained: 'Light rain' },
+        { title: 'Sun, Oct 15', icon: sunish, temperature: '13/6℃', explained: 'Light rain' },
+        { title: 'Mon, Oct 16', icon: verysunnyish, temperature: '12/4℃', explained: 'Few Clouds' },
+        { title: 'Tue, Oct 17', icon: evil, temperature: '12/4℃', explained: 'Overcast Clouds' },
+        { title: 'Wed, Oct 18', icon: sunish, temperature: '13/4℃', explained: 'Clear sky' },
+        { title: 'Thu, Oct 19', icon: evil, temperature: '12/5℃', explained: 'Overcast Clouds' },
+        { title: 'Fri, Oct 20', icon: nuetral, temperature: '9/3℃', explained: 'Scattered Clouds' },
+    ])
+    return (
         <div className="future">
-            <p className="future-day">8-day forcast </p>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Fri, Oct 13</p>
-                <img src={sunish} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Light rain</p>
-            </div>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Sat, Oct 14</p>
-                <img src={sunish} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Light rain</p>
-            </div>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Sun, Oct 15</p>
-                <img src={sunish} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Light rain</p>
-            </div>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Mon, Oct 16</p>
-                <img src={verysunnyish} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Few Clouds</p>
-            </div>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Tue, Oct 17</p>
-                <img src={evil} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Overcast Clouds</p>
-            </div>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Wed, Oct 18</p>
-                <img src={sunny} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Clear sky</p>
-            </div>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Thu, Oct 19</p>
-                <img src={evil} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Overcast Clouds</p>
-            </div>
-            <div className="future-perdiction">
-                <p className="future-perdiction-date">Fri, Oct 20</p>
-                <img src={nuetral} alt="sun" className="future-perdiction-image" />
-                <p className="future-perdiction-explained">Scattered Clouds</p>
-            </div>
+            <p className="future-day">8-day forcast</p>
+            {dateDatas.map(function (e) {
+                return (
+                    <div className="future-perdiction">
+                        <p className="future-perdiction-date">{e.title}</p>
+                        <div className="future-container">
+                            <img src={e.icon} alt="sun" className="future-perdiction-image" />
+                            <p className="future-container-temperature">{e.temperature}</p>
+                        </div>
+                        <p className="future-perdiction-explained">{e.explained}</p>
+                    </div>
+                )
+            })}
         </div>
     )
 }
