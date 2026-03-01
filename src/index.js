@@ -7,6 +7,9 @@ import Header from './components/header/Header';
 import Cards from './components/cards/Cards';
 import WeatherDetails from './components/details/WeatherDetails';
 import Future from './components/future/Future';
+import Pets from './components/pets/Pets';
+import ImageSlider from './components/slider/Slider';
+import Footer from './components/footer/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +19,9 @@ root.render(
     <Cards/>
     <WeatherDetails/>
     <Future/>
+    <Pets/>
+    <ImageSlider/>
+    <Footer/>
   </React.StrictMode>
 );
 
