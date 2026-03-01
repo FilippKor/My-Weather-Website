@@ -1,24 +1,32 @@
 .footer {
   background-color: #ffb36c;
+  padding: 40px 150px 64px 150px;
+  display: flex;
+  align-items: center;
+  column-gap: 103px;
 }
 .footer-contact {
+}
+.footer-adress{
+  margin-bottom: 10px;
+}
+.footer-contact-text{
+  margin-bottom: 10px;
+}
+.footer-contact-container{
   display: flex;
+  align-items: center;
+  column-gap: 20px;
 }
-.footer-contact-face {
-  width: 40px;
-  height: 40px;
-}
-.footer-contact-what {
-  width: 40px;
-  height: 40px;
-}
-.footer-contact-insta {
+.footer-contact-container-icon {
   width: 40px;
   height: 40px;
 }
 .footer-address {
-  display: flex;
-  width: 92;
-  height: 75;
-  opacity: 1;
+  font-weight: 500;
 }
+.footer-address-address {
+  font-weight: 500;
+  font-size: 12px;
+}
+
