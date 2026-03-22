@@ -1,44 +1,49 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './Pets.css';
-axios.defaults.baseURL = "https://newsapi.org/v2";
+
+const API_URL = "https://newsapi.org/v2/everything";
 const API_KEY = "93c4e029e9004d999b63425d40adcae7";
 
-const ArticleList = ({ articles }) => (
+const ArticleList = ({ articles, visibleCount, showMore }) => (
   <div className='pets'> 
-  <p className="pets-title">Interacting with our pets</p>
     <div className="pets-box">
-    {articles.map((article, index) => (
-      <div key={article.url || index} className="pets-news">
-        <img 
-          loading="lazy" 
-          className='pets-news-picutre'
-          src={article.urlToImage || 'https://via.placeholder.com/400x300?text=No+Image'} 
-          alt={article.title} 
-        />
+      {articles.slice(0, visibleCount).map((article, index) => (
+        <div key={article.url || index} className="pets-news">
+          <img 
+            loading="lazy" 
+            className='pets-news-picutre'
+            src={article.urlToImage || 'https://via.placeholder.com/400x300?text=No+Image'} 
+            alt={article.title} 
+          />
           <p className="pets-news-headline">{article.title}</p>
-      </div>
-    ))}
+        </div>
+      ))}
     </div>
-    <button className="pets-more">See more</button>
+  
+    {visibleCount < articles.length && (
+      <button className="pets-more" onClick={showMore}>
+        See more
+      </button>
+    )}
   </div>
 );
 
 const Pets = () => {
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(null);
-  
+  const [isLoading, setIsLoading] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(4);
 
   useEffect(() => {
     const fetchNews = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`/everything`, {
+        const response = await axios.get(API_URL, {
           params: {
-            q: 'pets',
+            q: 'food',
             sortBy: 'publishedAt',
             apiKey: API_KEY,
-            pageSize: 3 
+            pageSize: 40 
           }
         });
         
@@ -54,11 +59,24 @@ const Pets = () => {
     fetchNews();
   }, []);
 
+  const handleShowMore = () => {
+    setVisibleCount(prevCount => prevCount + 4);
+  };
+
   return (
     <div className="slider-container my-slider">
       <h2 className="slider-title">Pets News</h2>
       {isLoading && <p>Loading...</p>}
-      {articles.length > 0 ? (<ArticleList articles={articles} />) : (!isLoading && <p>No news found</p>)}
+      
+      {articles.length > 0 ? (
+        <ArticleList 
+          articles={articles} 
+          visibleCount={visibleCount} 
+          showMore={handleShowMore} 
+        />
+      ) : (
+        !isLoading && <p>No news found</p>
+      )}
     </div>
   );
 };
