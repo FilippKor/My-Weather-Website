@@ -26,7 +26,8 @@ const ArticleList = ({ articles }) => (
 
 const Pets = () => {
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(null);
+  
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -37,7 +38,7 @@ const Pets = () => {
             q: 'pets',
             sortBy: 'publishedAt',
             apiKey: API_KEY,
-            pageSize: 10 
+            pageSize: 3 
           }
         });
         

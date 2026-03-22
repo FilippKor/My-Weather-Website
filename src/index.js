@@ -22,6 +22,7 @@ root.render(
     <Pets/>
     <ImageSlider/>
     <Footer/>
+
   </React.StrictMode>
 );
 

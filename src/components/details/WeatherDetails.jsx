@@ -16,9 +16,9 @@ function WeatherDetails() {
   ]);
   return (
     <div className="WeatherDetails">
-      {weatherData.map(function (e) {
+      {weatherData.map(function (e, index) {
         return (
-          <div className="WeatherDetails-temp weather-container">
+          <div className="WeatherDetails-temp weather-container" key={index}>
             <p className="WeatherDetails-top">{e.top}</p>
             <p className="WeatherDetails-mid">{e.mid}</p>
             <img src={e.icon} alt="thermometer" className="WeatherDetails-image"/>
