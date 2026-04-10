@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './Pets.css';
 
+
 const API_URL = "https://newsapi.org/v2/everything";
 const API_KEY = "93c4e029e9004d999b63425d40adcae7";
+
 
 const ArticleList = ({ articles, visibleCount, showMore }) => (
   <div className='pets'> 

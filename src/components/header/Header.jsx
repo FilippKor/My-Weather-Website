@@ -27,7 +27,7 @@ function Header() {
             </div>
             <form className="header-search" onSubmit={handleSearch}>
                 <input type="text" placeholder='Search location...' className='header-search-weather'/>
-                <button className="header-search-find">
+                <button onClick={() => onSendObject(weatherData)} className="header-search-find">
                     <IoIosSearch className='header-search-find-icon'/>
                 </button>
             </form>
